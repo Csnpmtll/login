@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="hero is-primary is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    Login
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <form name="login">
+                <div class="column is-one-third">
+                    <div class="control">
+                        <p></p>
+                        <p>
+                            <strong>Username</strong>
+                        </p>
+                        <input class="input is-medium" type="text" name="id" id="id">
+                    </div>
+                    <div class="control">
+                        <p>
+                            <strong>Password</strong>
+                        </p>
+                        <input class="input is-medium" type="password" name="pwd" id="pwd">
+                    </div>
+                    <div class="control">
+                        <p>
+                            <strong>Autobot</strong>
+                        </p>
+                        <input class="input is-medium" type="text" name="autonum" id="auto">
+                    </div>
+                    <p>
+                        <a href="forget.html">Forget Password?</a>
+                    </p>
+                    <button class="button is-success" onclick="checklogin()">Login</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        function randomnum() {
+            document.getElementById("auto").placeholder +=Math.floor((Math.random(1000)*10));
+        }
+        function checklogin() {
+            var id=document.getElementById("id");
+            var pass=document.getElementById("pwd");
+            var autobot=document.getElementById("auto").placeholder;
+            var check=document.getElementById("auto").contains(autobot.value);
+            if (id==pass) {
+                window.open("success.html");
+            }else {
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

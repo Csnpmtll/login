@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <title>Forget Password</title>
+</head>
+<body>
+    <section class="hero is-primary is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                        Forget Password
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+        <div class="columns">
+            <div class="column is-one-third">
+                <div class="control">
+                    <p>
+                        <strong>Confirm E-mail</strong>
+                    </p>
+                    <div class "notification is-success" id="noti">
+                    </div>
+                    <input class="input is-medium" type="text" placeholder="E-mail" id="emailinput">
+                    <p id="demo"></p>
+                </div>
+                <br>
+                <button class="button is-link" onclick="checkemail()">Confirm</button>
+                <a href="login.html"><button class="button is-link" >Back</button></a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+    var text;
+    var gmail = document.getElementById("emailinput").contains("@gmail.com");
+    var hotmail = document.getElementById("emailinput").contains("@hotmail.com");
+    var outlook = document.getElementById("emailinput").contains("@outlook.com");
+        function checkemail(){
+            
+            if(gmail==true || hotmail==true || outlook==true){
+                text = "The password was sent to the email.";
+                document.getElementById("noti").className = "notification is-success";
+                document.getElementById("noti").innerHTML = text;
+            }else{
+                text = "Input not valid";
+            }document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
